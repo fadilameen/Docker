@@ -1,0 +1,13 @@
+sudo docker-compose up
+sudo docker-compose down
+sudo docker-compose build
+sudo docker ps -a
+
+
+
+
+to enter inside db container:  sudo docker exec -it {container_name} psql -U odoo18 postgres
+                              then \l to list all db inside that containers
+                              then \c {dbname} to change location into that db
+
+                              
