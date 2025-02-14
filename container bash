@@ -1,0 +1,94 @@
+### Odoo Docker Container Commands and Usage
+
+#### 1. Entering the Docker Container
+```bash
+sudo docker exec -it be54a9a576f1 bash
+```
+- Runs an interactive shell inside the Odoo container.
+- Requires `sudo` privileges.
+- `be54a9a576f1` is the container ID.
+
+#### 2. Listing Files in the Root Directory
+```bash
+ls
+```
+- Lists all files and directories in the root (`/`) directory.
+- Example output:
+  ```bash
+  bin   dev	     etc   lib	  media  opt   root  sbin  sys	usr
+  boot  entrypoint.sh  home  lib64  mnt	 proc  run   srv   tmp	var
+  ```
+
+#### 3. Navigating to a Directory
+```bash
+cd <directory>
+```
+- Moves into the specified directory.
+- Example:
+  ```bash
+  cd etc/
+  ```
+  Moves into `/etc`.
+
+#### 4. Listing Files in `/etc`
+```bash
+ls
+```
+- Lists all configuration files and directories.
+- Example output:
+  ```bash
+  X11  adduser.conf  alternatives  apt  bash.bashrc  odoo  passwd  shadow
+  ```
+
+#### 5. Navigating to the Odoo Configuration Directory
+```bash
+cd odoo/
+```
+- Moves into the `/etc/odoo` directory.
+
+#### 6. Listing Files in `/etc/odoo`
+```bash
+ls
+```
+- Example output:
+  ```bash
+  odoo.conf
+  ```
+
+#### 7. Viewing the Odoo Configuration File
+```bash
+cat odoo.conf
+```
+- Displays the contents of `odoo.conf`.
+- Example output:
+  ```ini
+  [options]
+  addons_path = /mnt/extra-addons
+  data_dir = /var/lib/odoo
+  ; admin_passwd = admin
+  ; dbfilter = .*
+  ; xmlrpc_port = 8069
+  ; workers = 0
+  ```
+
+#### 8. Checking the Current Directory
+```bash
+pwd
+```
+- Prints the current working directory.
+- Example output:
+  ```bash
+  /etc/odoo
+  ```
+
+### Summary of Commands
+| Command | Usage | Example Output |
+|---------|-------|----------------|
+| `sudo docker exec -it <container_id> bash` | Opens an interactive shell in the Docker container. | `odoo@be54a9a576f1:/$` |
+| `ls` | Lists files in the current directory. | `bin etc home var` |
+| `cd <directory>` | Navigates into the specified directory. | `odoo@be54a9a576f1:/etc$` |
+| `pwd` | Prints the current directory path. | `/etc/odoo` |
+| `cat <file>` | Displays file contents. | Shows Odoo config settings. |
+
+This document provides a guide to basic Docker and Odoo file system commands.
+
