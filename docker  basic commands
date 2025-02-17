@@ -3,6 +3,8 @@ sudo docker-compose down
 sudo docker-compose build
 sudo docker ps -a
 
+sudo docker system prune -a --volumes       :to clear all unused images
+
 
 
 
